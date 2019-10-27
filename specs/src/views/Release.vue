@@ -78,7 +78,7 @@ export default Vue.extend({
       },
       { text: 'Version', value: 'version' },
     ],
-    packets: null,
+    packets: [],
     packet: {},
   }),
   beforeRouteUpdate: function (to, from, next) {
@@ -97,7 +97,7 @@ export default Vue.extend({
     },
     switchRelease (version: string) {
       for (let p of this.packets) {
-        if (p.version == version) {
+        if ("version" in p && p["version"] == version) {
             this.packet = p
             break;
         }
