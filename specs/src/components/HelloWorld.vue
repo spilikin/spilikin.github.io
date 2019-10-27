@@ -1,5 +1,8 @@
 <template>
-  <v-container>
+  <v-container         
+    class="fill-height"
+    fluid
+  >
     <v-layout
       text-center
       wrap
