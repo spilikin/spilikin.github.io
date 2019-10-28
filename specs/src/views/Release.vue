@@ -1,50 +1,64 @@
 <template>
   <div class="">
-    <h1>Release {{ packet.version }}</h1>
-    <v-card>
-      <v-card-title>
+    <v-tabs
+      fixed-tabs
+      background-color="blue"
+      dark
+    >
+      <v-tab>
         Produkttypen
-        <v-spacer></v-spacer>
-        <v-text-field
-          v-model="searchProductType"
-          append-icon="mdi-magnify"
-          label="Suche"
-          single-line
-          hide-details
-        ></v-text-field>
-      </v-card-title>
-      <v-data-table
-        :headers="productTypeHeaders"
-        :items="packet.productTypes"
-        :items-per-page=10
-        class="elevation-1"
-        :search="searchProductType"
-      ></v-data-table>
-    </v-card>
-
-    <v-card>
-      <v-card-title>
+      </v-tab>
+      <v-tab>
         Dokumente
-        <v-spacer></v-spacer>
-        <v-text-field
-          v-model="searchDocument"
-          append-icon="mdi-magnify"
-          label="Suche"
-          single-line
-          hide-details
-        ></v-text-field>
-      </v-card-title>
-      <v-data-table
-        :headers="documentHeaders"
-        :items="packet.documents"
-        :items-per-page=-1
-        class="elevation-1"
-          :search="searchDocument"
-        ></v-data-table>
-    </v-card>
+      </v-tab>
 
 
-    <h2>Dokumente</h2>
+      <v-tab-item>
+        <v-card>
+          <v-card-title>
+            Produkttypen
+            <v-spacer></v-spacer>
+            <v-text-field
+              v-model="searchProductType"
+              append-icon="mdi-magnify"
+              label="Suche"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="productTypeHeaders"
+            :items="packet.productTypes"
+            :items-per-page=10
+            class="elevation-1"
+            :search="searchProductType"
+          ></v-data-table>
+        </v-card>
+      </v-tab-item>
+
+      <v-tab-item>
+        <v-card>
+          <v-card-title>
+            Dokumente
+            <v-spacer></v-spacer>
+            <v-text-field
+              v-model="searchDocument"
+              append-icon="mdi-magnify"
+              label="Suche"
+              single-line
+              hide-details
+            ></v-text-field>
+          </v-card-title>
+          <v-data-table
+            :headers="documentHeaders"
+            :items="packet.documents"
+            :items-per-page=10
+            class="elevation-1"
+              :search="searchDocument"
+            ></v-data-table>
+        </v-card>
+      </v-tab-item>
+    </v-tabs>
 
   </div>
 </template>

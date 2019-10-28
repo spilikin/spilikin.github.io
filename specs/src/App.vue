@@ -1,8 +1,8 @@
 <template>
   <v-app>
     <v-navigation-drawer
-      :permanent=true
       app
+      v-model="drawer"
     >
       <v-list dense>
         <v-list-item to="/">
@@ -29,6 +29,7 @@
       color="blue"
       dark
     >
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
@@ -53,6 +54,7 @@ export default Vue.extend({
   components: {
   },
   data: () => ({
+    drawer: null,
     packets: []
   }),
   mounted: function() {
