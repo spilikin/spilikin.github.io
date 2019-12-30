@@ -7,8 +7,9 @@
 	<title>trust test page</title>
 
 </head>
-<body>
+<body onload="document.getElementById('query').textContent = window.location.href.split('?').pop().trim()">
 	<main>
+        <p id="query"></p>
         <h1>Tests of custom URL scheme</h1>
         <ul>
             <li>GOOD: <a href="trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue">trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue</a></li>
