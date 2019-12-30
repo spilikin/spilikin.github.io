@@ -7,14 +7,23 @@
 	<title>trust test page</title>
 
 </head>
-<body onload="document.getElementById('query').textContent = window.location.href.split('?').pop().trim()">
+<body>
 	<main>
-        <p id="query"></p>
-        <h1>Tests of custom URL scheme</h1>
-        <ul>
-            <li>GOOD: <a href="trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue">trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue</a></li>
-            <li>BAD: <a href="trust:some/path?and=query">trust:some/path?and=query</a></li>
-        </ul>
+        <div id="urls">
+            <h1>Tests of custom URL scheme</h1>
+            <ul>
+                <li>GOOD: <a href="trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue">trust:some/path?redirect=http%3A%2F%2Fspilikin.dev%2Ftrust.html%3FredirectedFromApp%3Dtrue</a></li>
+                <li>BAD: <a href="trust:some/path?and=query">trust:some/path?and=query</a></li>
+            </ul>
+        </div>
+        <h1 id="answer"></h1>
+        <script>
+            var parts = window.location.href.split('?')
+            if (parts.length > 1) {
+                document.getElementById('answer').textContent = "Got answer from app: " + parts[1]
+                document.getElementById('urls').style.display = "none";
+            }
+        </script>
 	</main>
 </body>
 </html>
