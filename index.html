@@ -22,11 +22,18 @@
 	<!-- <link rel="stylesheet" href="css/themes/white-grey.css"> -->
 	<!-- <link rel="stylesheet" href="css/themes/white-red.css"> -->
 	<!-- <link rel="stylesheet" href="css/themes/yellow-black.css"> -->
+	<script src="scripts/cash.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			var num = Math.floor(Math.random()*7)+1
+			$('.intro > img').attr('src', "images/spilikin"+num+".png")
+		})
+	</script>
 </head>
 <body>
 	<main>
-		<div class="intro"><img src="images/spilikin.png" alt="spilikin"></div>
-		<div class="tagline">Security | eHealth | Linux | Apple</div>
+		<div class="intro"><img src="images/spilikin1.png" alt="spilikin"></div>
+		<div class="tagline">Security | eHealth | Web | Linux | Apple</div>
 		<!-- Find your icons from here - https://fontawesome.com/icons?d=gallery&s=brands -->
 		<div class="icons-social">
 			<a target="_blank" href="https://github.com/spilikin"><i class="fab fa-github"></i></a>
